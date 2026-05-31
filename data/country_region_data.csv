@@ -1,0 +1,177 @@
+country,region,share
+Afghanistan,Asia-Pacific,54.3
+Australia,Asia-Pacific,54.3
+Bangladesh,Asia-Pacific,54.3
+Bhutan,Asia-Pacific,54.3
+Brunei,Asia-Pacific,54.3
+Cambodia,Asia-Pacific,54.3
+China,Asia-Pacific,54.3
+Fiji,Asia-Pacific,54.3
+India,Asia-Pacific,54.3
+Indonesia,Asia-Pacific,54.3
+Japan,Asia-Pacific,54.3
+Kazakhstan,Asia-Pacific,54.3
+Kyrgyzstan,Asia-Pacific,54.3
+Laos,Asia-Pacific,54.3
+Malaysia,Asia-Pacific,54.3
+Mongolia,Asia-Pacific,54.3
+Myanmar,Asia-Pacific,54.3
+Nepal,Asia-Pacific,54.3
+New Caledonia,Asia-Pacific,54.3
+North Korea,Asia-Pacific,54.3
+Pakistan,Asia-Pacific,54.3
+Papua New Guinea,Asia-Pacific,54.3
+Philippines,Asia-Pacific,54.3
+Singapore,Asia-Pacific,54.3
+Solomon Is.,Asia-Pacific,54.3
+South Korea,Asia-Pacific,54.3
+Sri Lanka,Asia-Pacific,54.3
+Taiwan,Asia-Pacific,54.3
+Tajikistan,Asia-Pacific,54.3
+Thailand,Asia-Pacific,54.3
+Timor-Leste,Asia-Pacific,54.3
+Turkmenistan,Asia-Pacific,54.3
+Uzbekistan,Asia-Pacific,54.3
+Vanuatu,Asia-Pacific,54.3
+Vietnam,Asia-Pacific,54.3
+New Zealand,Asia-Pacific,54.3
+Bahamas,North America,18.7
+Belize,North America,18.7
+Canada,North America,18.7
+Costa Rica,North America,18.7
+Cuba,North America,18.7
+Dominican Rep.,North America,18.7
+El Salvador,North America,18.7
+Guatemala,North America,18.7
+Haiti,North America,18.7
+Honduras,North America,18.7
+Jamaica,North America,18.7
+Mexico,North America,18.7
+Nicaragua,North America,18.7
+Panama,North America,18.7
+Puerto Rico,North America,18.7
+United States of America,North America,18.7
+Albania,Europe,15.6
+Armenia,Europe,15.6
+Austria,Europe,15.6
+Azerbaijan,Europe,15.6
+Belarus,Europe,15.6
+Belgium,Europe,15.6
+Bosnia and Herz.,Europe,15.6
+Bulgaria,Europe,15.6
+Croatia,Europe,15.6
+Cyprus,Europe,15.6
+Czechia,Europe,15.6
+Denmark,Europe,15.6
+Estonia,Europe,15.6
+Finland,Europe,15.6
+France,Europe,15.6
+Georgia,Europe,15.6
+Germany,Europe,15.6
+Greece,Europe,15.6
+Hungary,Europe,15.6
+Iceland,Europe,15.6
+Ireland,Europe,15.6
+Italy,Europe,15.6
+Kosovo,Europe,15.6
+Latvia,Europe,15.6
+Lithuania,Europe,15.6
+Luxembourg,Europe,15.6
+Macedonia,Europe,15.6
+Moldova,Europe,15.6
+Montenegro,Europe,15.6
+Netherlands,Europe,15.6
+Norway,Europe,15.6
+Poland,Europe,15.6
+Portugal,Europe,15.6
+Romania,Europe,15.6
+Russia,Europe,15.6
+Serbia,Europe,15.6
+Slovakia,Europe,15.6
+Slovenia,Europe,15.6
+Spain,Europe,15.6
+Sweden,Europe,15.6
+Switzerland,Europe,15.6
+Ukraine,Europe,15.6
+United Kingdom,Europe,15.6
+Greenland,Europe,15.6
+Argentina,Latin America,6.2
+Bolivia,Latin America,6.2
+Brazil,Latin America,6.2
+Chile,Latin America,6.2
+Colombia,Latin America,6.2
+Ecuador,Latin America,6.2
+Falkland Is.,Latin America,6.2
+Guyana,Latin America,6.2
+Paraguay,Latin America,6.2
+Peru,Latin America,6.2
+Suriname,Latin America,6.2
+Trinidad and Tobago,Latin America,6.2
+Uruguay,Latin America,6.2
+Venezuela,Latin America,6.2
+Algeria,Middle East & Africa,5.2
+Angola,Middle East & Africa,5.2
+Benin,Middle East & Africa,5.2
+Botswana,Middle East & Africa,5.2
+Burkina Faso,Middle East & Africa,5.2
+Burundi,Middle East & Africa,5.2
+Cameroon,Middle East & Africa,5.2
+Central African Rep.,Middle East & Africa,5.2
+Chad,Middle East & Africa,5.2
+Congo,Middle East & Africa,5.2
+Côte d'Ivoire,Middle East & Africa,5.2
+Dem. Rep. Congo,Middle East & Africa,5.2
+Djibouti,Middle East & Africa,5.2
+Egypt,Middle East & Africa,5.2
+Eq. Guinea,Middle East & Africa,5.2
+Eritrea,Middle East & Africa,5.2
+Ethiopia,Middle East & Africa,5.2
+Gabon,Middle East & Africa,5.2
+Gambia,Middle East & Africa,5.2
+Ghana,Middle East & Africa,5.2
+Guinea,Middle East & Africa,5.2
+Guinea-Bissau,Middle East & Africa,5.2
+Iran,Middle East & Africa,5.2
+Iraq,Middle East & Africa,5.2
+Israel,Middle East & Africa,5.2
+Jordan,Middle East & Africa,5.2
+Kenya,Middle East & Africa,5.2
+Kuwait,Middle East & Africa,5.2
+Lebanon,Middle East & Africa,5.2
+Lesotho,Middle East & Africa,5.2
+Liberia,Middle East & Africa,5.2
+Libya,Middle East & Africa,5.2
+Madagascar,Middle East & Africa,5.2
+Malawi,Middle East & Africa,5.2
+Mali,Middle East & Africa,5.2
+Mauritania,Middle East & Africa,5.2
+Morocco,Middle East & Africa,5.2
+Mozambique,Middle East & Africa,5.2
+Namibia,Middle East & Africa,5.2
+N. Cyprus,Middle East & Africa,5.2
+Niger,Middle East & Africa,5.2
+Nigeria,Middle East & Africa,5.2
+Oman,Middle East & Africa,5.2
+Palestine,Middle East & Africa,5.2
+Qatar,Middle East & Africa,5.2
+Rwanda,Middle East & Africa,5.2
+S. Sudan,Middle East & Africa,5.2
+Saudi Arabia,Middle East & Africa,5.2
+Senegal,Middle East & Africa,5.2
+Sierra Leone,Middle East & Africa,5.2
+Somalia,Middle East & Africa,5.2
+Somaliland,Middle East & Africa,5.2
+South Africa,Middle East & Africa,5.2
+Sudan,Middle East & Africa,5.2
+Syria,Middle East & Africa,5.2
+Tanzania,Middle East & Africa,5.2
+Togo,Middle East & Africa,5.2
+Tunisia,Middle East & Africa,5.2
+Turkey,Middle East & Africa,5.2
+Uganda,Middle East & Africa,5.2
+United Arab Emirates,Middle East & Africa,5.2
+W. Sahara,Middle East & Africa,5.2
+Yemen,Middle East & Africa,5.2
+Zambia,Middle East & Africa,5.2
+Zimbabwe,Middle East & Africa,5.2
+eSwatini,Middle East & Africa,5.2

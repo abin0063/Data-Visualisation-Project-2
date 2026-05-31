@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Financial Loss by Scam Type",
+    "color": "black",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "dy": -10
+  },
+  "width": 350,
+  "height": 250,
+  "params": [
+    {
+      "name": "scamTypeFilter",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "Buying and selling", "Employment", "Investment", "Money recovery", "Payment redirection", "Phishing", "Relationship", "Takeover", "Threat", "Unexpected money"],
+        "name": "Select Scam Type: "
+      }
+    }
+  ],
+  "data": {
+    "url": "data/scam_types.csv"
+  },
+  "transform": [
+    {
+      "filter": "scamTypeFilter === 'All' || datum.scam_type === scamTypeFilter"
+    }
+  ],
+  "mark": {
+    "type": "circle",
+    "tooltip": true,
+    "stroke": "black",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "total_reports",
+      "type": "quantitative",
+      "title": "Total Reports",
+      "scale": {"domain": [0, 15000]}
+    },
+    "y": {
+      "field": "amount_lost",
+      "type": "quantitative",
+      "title": "Amount Lost ($)",
+      "scale": {"domain": [0, 50000000]}
+    },
+    "size": {
+      "field": "amount_lost",
+      "type": "quantitative",
+      "title": "Loss Magnitude",
+      "scale": {"domain": [0, 50000000], "range": [100, 2000]}
+    },
+    "color": {
+      "field": "scam_type",
+      "type": "nominal",
+      "title": "Scam Type",
+      "scale": {
+        "domain": ["Buying and selling", "Employment", "Investment", "Money recovery", "Payment redirection", "Phishing", "Relationship", "Takeover", "Threat", "Unexpected money"],
+        "range": ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999", "#56B4E9", "#009E73", "#F0E442"]
+      }
+    }
+  }
+}

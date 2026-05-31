@@ -1,0 +1,4 @@
+model,share,label,valuation_trillions,definition,example
+Business to Business (B2B),78.4,B2B (78.4%),21.8,Businesses sell to other businesses,Alibaba selling products wholesale to retailers.
+Business to Consumer (B2C),17.6,B2C (17.6%),4.9,Businesses sell directly to consumers,"Amazon selling books, electronics, or clothing to customers."
+Consumer to Consumer (C2C),4,C2C (4.0%),1.1,Consumers sell to other consumers,eBay or Facebook Marketplace where users sell second-hand items to other users.

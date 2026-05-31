@@ -1,0 +1,63 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Online Spending and Growth",
+    "color": "black",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "dy": -10
+  },
+  "width": 400,
+  "height": 270,
+  "background": "white",
+  "data": { "url": "data/growing_over_time.csv" },
+  "params": [
+    {
+      "name": "showSpend",
+      "value": true,
+      "bind": {"input": "checkbox", "name": "Show Online Spend ($B) "}
+    },
+    {
+      "name": "showGrowth",
+      "value": true,
+      "bind": {"input": "checkbox", "name": "Show Growth (%) "}
+    }
+  ],
+  "layer": [
+    {
+      "transform": [
+        { "filter": "datum.metric == 'Online Spend ($B)' && showSpend" }
+      ],
+      "mark": { "type": "bar", "opacity": 0.8 },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "value", "type": "quantitative", "title": "Online Spend ($B)" },
+        "color": { "value": "#4C1178" },
+        "tooltip": [
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "value", "type": "quantitative", "title": "Spend ($B)"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        { "filter": "datum.metric == 'Growth (%)' && showGrowth" }
+      ],
+      "mark": { "type": "line", "strokeWidth": 3, "point": { "filled": true, "fill": "black" } },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "value", "type": "quantitative", "title": "Growth (%)" },
+        "color": { "value": "#38BDF8" },
+        "tooltip": [
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "value", "type": "quantitative", "title": "Growth (%)"}
+        ]
+      }
+    }
+  ],
+  "resolve": { "scale": { "y": "independent" } },
+  "config": {
+    "view": { "stroke": "white", "strokeWidth": 2, "cornerRadius": 12 }
+  }
+}

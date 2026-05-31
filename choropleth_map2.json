@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 390,
+  "height": 370,
+  "title": {
+    "text": "Online Scam Rates Across Australian States",
+    "color": "black",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "dy": -10
+  },
+  "params": [
+    {
+      "name": "stateHighlight",
+      "select": {"type": "point", "fields": ["properties.STATE_NAME"]}
+    }
+  ],
+  "config": {
+    "background": "white",
+    "view": {"stroke": "transparent"}
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [133, -27],
+    "scale": 500
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "states.geojson",
+        "format": {"type": "json", "property": "features"}
+      },
+      "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 1},
+      "transform": [
+        {
+          "lookup": "properties.STATE_NAME",
+          "from": {
+            "data": {"url": "data/australian_states_scamsreport.csv"},
+            "key": "State",
+            "fields": ["Reports", "Population"]
+          }
+        },
+        {
+          "calculate": "(datum.Reports / datum.Population) * 100000",
+          "as": "NormalizedScams"
+        }
+      ],
+      "encoding": {
+        "color": {
+          "field": "NormalizedScams",
+          "type": "quantitative",
+          "scale": {
+            "scheme": {"name": "blues", "count": 5},
+            "domain": [50, 750]
+          },
+          "legend": {"title": "Scams per 100k"}
+        },
+        "opacity": {
+          "condition": {"param": "stateHighlight", "value": 1},
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "properties.STATE_NAME", "type": "nominal", "title": "State"},
+          {"field": "Reports", "type": "quantitative", "title": "Total Reports"},
+          {"field": "Population", "type": "quantitative", "title": "Population", "format": ","},
+          {"field": "NormalizedScams", "type": "quantitative", "title": "Scams per 100k", "format": ".1f"}
+        ]
+      }
+    }
+  ]
+}

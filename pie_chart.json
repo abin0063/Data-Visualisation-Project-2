@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Most Visited E-Commerce Platforms in Australia",
+    "color": "black",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "dy": -10
+  },
+  "width": 410,
+  "height": 230,
+  "data": {
+    "url": "data/platform_marketplace.csv"
+  },
+  "mark": {
+    "type": "arc",
+    "outerRadius": 100
+  },
+  "encoding": {
+    "theta": {
+      "field": "Avg_monthly_marketplace",
+      "type": "quantitative",
+      "sort": "ascending"
+    },
+    "color": {
+      "field": "Platform",
+      "type": "nominal",
+      "title": "Platform",
+      "scale": {
+        "range": ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7"]
+      }
+    },
+    "tooltip": [
+      {"field": "Platform", "type": "nominal"},
+      {"field": "Avg_monthly_marketplace", "type": "quantitative", "title": "Average Monthly Visitors in this Platform (Millions)"}
+    ]
+  },
+  "view": {
+    "stroke": null
+  }
+}

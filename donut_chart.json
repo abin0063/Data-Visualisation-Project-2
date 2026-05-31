@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Online Spend by Generation",
+    "color": "black",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "anchor": "middle"
+  },
+  "width": 405,
+  "height": 208,
+  "data": {
+    "url": "data/spend_by_generation.csv"
+  },
+  "mark": {
+    "type": "arc",
+    "innerRadius": 50,
+    "stroke": "white",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "theta": {
+      "field": "online_spend",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Generation",
+      "type": "nominal",
+      "scale": {
+        "range": ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2"]
+      },
+      "legend": {"title": "Generation"}
+    },
+    "tooltip": [
+      {"field": "Generation", "type": "nominal"},
+      {"field": "online_spend", "type": "quantitative", "title": "Spending (Billion)"},
+      {"field": "insight", "type": "nominal", "title": "Insight"}
+    ]
+  },
+  "view": {"stroke": null}
+}

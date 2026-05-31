@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Key Reasons Australians Shop Online",
+    "color": "black",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "dy": -10
+  },
+  "width": 400,
+  "height": 200,
+  "data": {
+    "url": "data/shopping_preferences.csv"
+  },
+  "mark": {
+    "type": "circle",
+    "size": 200,
+    "color": "#4C1178",
+    "cursor": "pointer"
+  },
+  "encoding": {
+    "x": {
+      "field": "percentage",
+      "type": "quantitative",
+      "title": "Percentage of Shoppers (%)",
+      "scale": {"domain": [0, 100]}
+    },
+    "y": {
+      "field": "preference",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null,
+      "axis": {
+        "labelLimit": 200
+      }
+    },
+    "tooltip": [
+      {"field": "preference", "type": "nominal"},
+      {"field": "percentage", "type": "quantitative", "title": "Percentage of Shoppers (%)"}
+    ]
+  },
+  "view": {
+    "stroke": null
+  }
+}

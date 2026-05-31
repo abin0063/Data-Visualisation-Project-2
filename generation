@@ -1,0 +1,37 @@
+const details = {
+  'Gen Z': {
+    text: '<b>Gen Z (1998 - 2010)</b><br>The Tech-Savvy Trendsetters who rely on social media for product discovery.<br>They value affordability and are the most open to new tech like agentic commerce.',
+    img: 'pictures_icons/genz.jpg'
+  },
+  'Millennials': {
+    text: '<b>Millennials (1981 - 1997)</b><br>The Convenience Seekers who prioritize a seamless, efficient shopping experience.<br>They use mobile apps more than any other group and value 24/7 convenience.',
+    img: 'pictures_icons/millennials.jpg'
+  },
+  'Gen X': {
+    text: '<b>Gen X (1965 - 1980)</b><br>The Pragmatic Shoppers who balance a cautious approach to tech with a focus on value.<br>They often use marketplace apps and are happy to trade delivery speed for lower costs.',
+    img: 'pictures_icons/gen-x.jpg'
+  },
+  'Baby Boomers': {
+    text: '<b>Baby Boomers (1946 - 1964)</b><br>The Quality-Focused Shoppers who shop with a focus on product quality and simplicity.<br>They are loyal to retailers they trust and highly value free returns and delivery certainty.',
+    img: 'pictures_icons/babyboomers.jpg'
+  },
+  'Builders': {
+    text: '<b>Builders (1925 - 1945)</b><br>The Cautious Traditionalists who prioritize reputable retailers and security above all else.<br>They are less motivated by sales and speed, preferring brands with proven reliability.',
+    img: 'pictures_icons/builders.jpg'
+  }
+};
+
+function showDetail(gen) {
+  const detailBox = document.getElementById('gen-detail');
+  const data = details[gen];
+
+  if (data) {
+    // We use backticks (`) to combine the text and the image tag
+    detailBox.innerHTML = `
+      <p>${data.text}</p>
+      <img src="${data.img}" alt="${gen}" style="width: 100%; max-width: 250px; display: block; margin: 15px auto 0 auto; border-radius: 8px;">
+    `;
+  } else {
+    detailBox.innerHTML = "<h3>Information not available.</h3>";
+  }
+}

@@ -1,0 +1,83 @@
+var vg_1 = "ord_prop_chart.json";
+vegaEmbed("#ORD_PROP_CHART", vg_1,{"actions":false})
+    .then(function(result) {
+    })
+    .catch(console.error);
+
+var vg_2 = "line_column_chart.json";
+vegaEmbed("#LINE_COLUMN_CHART", vg_2,{"actions":false})
+    .then(function(result) {
+    })
+    .catch(console.error);
+
+var vg_3 = "choropleth_map.json"; 
+vegaEmbed("#CHOROPLETH_MAP", vg_3, {"actions": false}) 
+    .then(function(result) {
+    })
+    .catch(console.error);
+
+var vg_4 = "line_chart.json";
+vegaEmbed("#LINE_CHART", vg_4,{"actions":false})
+    .then(function(result) {
+    })
+    .catch(console.error);
+
+var vg_5 = "radial_chart.json";
+vegaEmbed("#RADIAL_CHART", vg_5,{"actions":false})
+    .then(function(result) {
+    })
+    .catch(console.error);
+
+var vg_6 = "waffle_chart.json";
+vegaEmbed("#WAFFLE_CHART", vg_6,{"actions":false})
+    .then(function(result) {
+    })
+    .catch(console.error);
+
+var vg_7 = "symbol_prop_chart.json";
+vegaEmbed("#SYMBOL_PROP_CHART", vg_7,{"actions":false})
+    .then(function(result) {
+    })
+    .catch(console.error);
+
+var vg_8 = "donut_chart.json";
+vegaEmbed("#DONUT_CHART", vg_8,{"actions":false})
+    .then(function(result) {
+    })
+    .catch(console.error);
+
+var vg_9 = "stacked_bar_chart.json";
+vegaEmbed('#STACKED_BAR_CHART', vg_9,{"actions":false})
+    .then(function(result) {
+    })
+    .catch(console.error);
+
+var vg_10 = "lollipop_chart.json";
+vegaEmbed('#LOLLIPOP_CHART', vg_10,{"actions":false})
+    .then(function(result) {
+    })
+    .catch(console.error);
+
+var vg_11 = "pie_chart.json";
+vegaEmbed('#PIE_CHART', vg_11,{"actions":false})
+    .then(function(result) {
+    })
+    .catch(console.error);
+
+var vg_12 = "dot_plot.json";
+vegaEmbed('#DOT_PLOT', vg_12,{"actions":false})
+    .then(function(result) {
+    })
+    .catch(console.error);
+
+var vg_13 = "choropleth_map2.json"; 
+vegaEmbed("#CHOROPLETH_MAP2", vg_13, {"actions": false})
+    .then(function(result) {
+    })
+    .catch(console.error);
+
+var vg_14 = "bubble_chart.json"; 
+vegaEmbed("#BUBBLE_CHART", vg_14, {"actions": false}) 
+    .then(function(result) {
+    })
+    .catch(console.error);

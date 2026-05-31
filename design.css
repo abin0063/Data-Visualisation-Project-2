@@ -1,0 +1,292 @@
+/* 1. Main Page Background Color */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F3E8FF; /* Soft Lavender overall page background */
+}
+
+/* 2. Header Block Background Color & Height Restrictions */
+header {
+    background-color: #3B0764; 
+    /* Reduce top/bottom padding to make it thinner */
+    padding: 20px 20px; 
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Also ensure your title and subtitle don't have excessive margins */
+header h1 {
+    margin: 0 0 10px 0; /* Adjust this to control gap below the title */
+}
+
+.header-subtitle {
+    margin: 0 0 2px 0; /* Adjust this to control gap below the subtitle */
+}
+
+.author-info {
+    margin-top: 10px;   /* Smaller margin here brings the author closer to the subtitle */
+    margin-bottom: 0;
+}
+
+/* Base style for your main title line */
+h1 {
+    display: flex;
+    justify-content: center;   /* Centers left icon, text, and right icon together */
+    align-items: center;       /* Keeps them perfectly aligned vertically */
+    gap: 20px;                 /* Creates an even gap between the text and both images */
+    margin: 0 0 6px 0;         /* Small spacing below title to separate from the subtitle */
+    padding: 0;
+    color: #FFFFFF;            /* Corrected: Force title font to pure white color */
+    font-size: 2.8rem;
+    letter-spacing: 0px;
+    transition: letter-spacing 0.4s ease, text-shadow 0.4s ease;
+}
+
+/* Style for your subtitle sentence directly beneath the title */
+.header-subtitle {
+    font-size: 1.0rem;         /* Smaller, clean modern font profile */
+    color: #FFFFFF;            /* Corrected: Set font to pure white color */
+    opacity: 0.9;              /* Subtly balances layout weight against the massive h1 */
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    max-width: 800px;          /* Stops sentence from over-stretching across huge displays */
+    transition: text-shadow 0.4s ease;
+}
+
+/* HOVER ANIMATIONS: Smoothed out by triggering off the entire header element wrapper */
+header:hover {
+    transform: scale(1.01);      /* Slight scale up of the banner on hover */
+}
+
+header:hover h1 {
+    letter-spacing: 3px;         /* Expands text tracking smoothly on hover */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.7); 
+}
+
+header:hover .header-subtitle {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /*Subtle glow added to the subtitle */
+}
+
+/* Controls both header image icons equally */
+.header-icon {
+    height: 50px;              /* Limits height so they match the text size beautifully */
+    width: auto;               /* Prevents images from stretching or squishing */
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+/* Moves and expands the icons slightly when you hover over the header zone */
+header:hover .header-icon {
+    transform: scale(1.1);     /* Makes both icons pop out slightly on hover */
+}
+
+/* 3. Button Container Alignment */
+.button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button-container button {
+    margin: 0 10px;            /* 0px space on top/bottom, 10px space on the left and right */
+    padding: 8px 16px;         /* Adds nice breathing room inside the buttons */
+    cursor: pointer;
+}
+
+/* 4. Fun Fact Text Styling */
+#factBox {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: black;              /* Makes the text visible against your lavender page background */
+}
+
+/* 1. Main Grid System */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 2. Half-width elements (The side-by-side ones) */
+.col-half {
+    grid-column: span 6;
+}
+
+/* 3. Full-width elements (The ones that span the whole width) */
+.col-full {
+    grid-column: 1 / -1; 
+}
+
+/* 4. Tall charts (Spans 6 columns, takes up 2 rows) */
+.tall-chart {
+    grid-column: span 6;
+    grid-row: span 2;
+}
+
+/* Ensure chart boxes look nice */
+.chart-box {
+    background: #ffffff;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 20px;
+}
+.story-box {
+    margin-top: 5px; /* Adds space between the chart border and the text */
+    padding: 5px;
+    color: #3B0764; /* Matches your title color */
+    line-height: 1.5;
+}
+
+.story-box h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.story-box p {
+    font-size: 14px;
+    color: #4B5563; /* Softer grey for readability */
+}
+
+/* 7. Subsection Chapter Headings */
+.subsection-header {
+    text-align: center;
+    margin: 60px auto 2px auto;
+    /* Optional: limit width if you don't want it full-page */
+    max-width: 900px;
+}
+
+.subsection-header h2 {
+    /* Using Outfit: clean, modern, and very professional */
+    font-family: 'Outfit', sans-serif;
+    
+    background-color: #E9D5FF; 
+    color: #4C1D95;          /* Slightly darker purple for better contrast */
+    font-size: 1.35rem;      
+    font-weight: 700;        /* Bold weight for better header presence */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    
+    /* Padding to create the "pill" shape */
+    padding: 12px 35px;
+    margin: 0;
+    
+    /* Rounded corners */
+    border-radius: 50px; 
+    
+    /* Display settings */
+    display: inline-block;
+    
+    /* Subtle shadow for a clean "floating" effect */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for your buttons */
+.gen-grid {
+    text-align: center; /* Centers the buttons inside the container */
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Style for the buttons */
+.gen-card {
+    display: inline-block; /* Makes them sit next to each other in the center */
+    margin: 0 8px;         /* Horizontal spacing */
+    padding: 8px 16px;
+    cursor: pointer;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.gen-card:hover {
+    background: #38BDF8;
+    color: white;
+}
+
+/* Container for the text when a button is clicked */
+#gen-detail {
+    max-width: 650px;    /* Limits width to force balanced wrapping */
+    margin: 20px auto;   /* Centers the container */
+    text-align: center;  /* Centers the text */
+    line-height: 1.6;    /* Adds breathing room between lines */
+    font-family: 'Outfit', sans-serif; /* Consistent with your other headers */
+}
+
+/* Style for the image inside the detail box */
+#gen-detail img {
+    display: block; 
+    margin: 20px auto 0 auto; 
+    max-width: 300px; 
+    border-radius: 12px;
+}
+
+/* The detail display area */
+.detail-box {
+    text-align: center;    /* Centers the text and the image inside */
+    margin-top: 2px;
+    padding: 2px;
+    border: 1px solid #F3E8FF;
+    border-radius: 8px;
+    min-height: 150px;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row; /* Force side-by-side on large screens */
+  flex-wrap: wrap;     /* Allow wrapping to a new line on small screens */
+}
+
+@media (max-width: 600px) {
+  .dashboard-container {
+    flex-direction: column; /* Force vertical stack on mobile */
+  }
+}
+
+.author-info {
+    text-align: center;
+    font-size: 1.0rem;
+    color: #ffffff; /* White font */
+    /* Use margin-top to create the gap from the element above it */
+    margin-top: 30px; 
+    /* Optional: add margin-bottom if you need space below it too */
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.author-info p {
+    /* Tightens the space between the name and the date lines */
+    margin: 5px 0; 
+}
+
+.main-footer {
+    margin-top: 2px;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+.references-list {
+    column-count: 2;            /* Creates the 2-column layout */
+    column-gap: 40px;           /* Space between columns */
+    list-style-type: none;      /* Removes bullets */
+    padding: 0;
+}
+
+.references-list li {
+    font-size: 0.75rem;         /* Small, legible academic size */
+    margin-bottom: 12px;        /* Space between items */
+    break-inside: avoid;        /* Prevents items from splitting between columns */
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Global E-commerce Share Breakdown",
+    "color": "black",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "dy": -10
+  },
+  "width": 500,
+  "height": 340,
+  "background": "#FFFFFF",
+  "data": {
+    "values": [
+      {"model": "Business to Business (B2B)", "share": 78.4, "label": "B2B (78.4%)", "cx": 0, "cy": 0, "valuation": 21.8, "definition": "Businesses sell to other businesses", "example": "Alibaba selling products wholesale to retailers."},
+      {"model": "Business to Consumer (B2C)", "share": 17.6, "label": "B2C (17.6%)", "cx": 2.0, "cy": -1.0, "valuation": 4.9, "definition": "Businesses sell directly to consumers", "example": "Amazon selling books, electronics, or clothing to customers."},
+      {"model": "Consumer to Consumer (C2C)", "share": 4.0, "label": "C2C (4.0%)", "cx": -1.8, "cy": 1.2, "valuation": 1.1, "definition": "Consumers sell to other consumers", "example": "eBay or Facebook Marketplace where users sell second-hand items."}
+    ]
+  },
+  "params": [
+    {
+      "name": "modelSelection",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "Business to Business (B2B)", "Business to Consumer (B2C)", "Consumer to Consumer (C2C)"],
+        "name": "Focus on: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "circle",
+        "opacity": 0.95,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {"field": "cx", "type": "quantitative", "scale": {"domain": [-4, 4]}, "axis": null},
+        "y": {"field": "cy", "type": "quantitative", "scale": {"domain": [-3, 3]}, "axis": null},
+        "size": {
+          "field": "share",
+          "type": "quantitative",
+          "scale": {"domain": [0, 100], "range": [3000, 40000]},
+          "legend": null
+        },
+        "color": {
+          "field": "model",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Business to Business (B2B)", "Business to Consumer (B2C)", "Consumer to Consumer (C2C)"],
+            "range": ["#4C1178", "#38BDF8", "#D8B4FE"]
+          },
+          "legend": null
+        },
+        "opacity": {
+          "condition": {"test": "modelSelection == 'All' || datum.model == modelSelection", "value": 0.95},
+          "value": 0.1
+        },
+        "tooltip": [
+          {"field": "model", "type": "nominal", "title": "Model"},
+          {"field": "share", "type": "quantitative", "title": "Market Share (%)"},
+          {"field": "valuation", "type": "quantitative", "title": "Valuation ($T)"},
+          {"field": "definition", "type": "nominal", "title": "Definition"},
+          {"field": "example", "type": "nominal", "title": "Example"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "center", "baseline": "middle", "fontWeight": "bold", "fontSize": 14},
+      "encoding": {
+        "x": {"field": "cx", "type": "quantitative"},
+        "y": {"field": "cy", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"},
+        "color": {"condition": {"test": "datum.share > 30", "value": "#FFFFFF"}, "value": "#3B0764"},
+        "opacity": {
+          "condition": {"test": "modelSelection == 'All' || datum.model == modelSelection", "value": 1},
+          "value": 0
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": "#E5E7EB", "strokeWidth": 4, "cornerRadius": 12}
+  }
+}

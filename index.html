@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="vega_lite_1"></script>
+
+    <title>Australian e-Commerce Insights</title>
+
+    <link rel="stylesheet" href="design.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+    <h1>
+        <!-- Title and Icons -->
+        <img src="pictures_icons/box_title.png" alt="Left Icon" class="header-icon">
+        <span>Australian e-Commerce Insights</span>
+        <img src="pictures_icons/bag_title.jpg" alt="Right Icon" class="header-icon">
+    </h1>
+    
+    <!-- Subtitle (Tracking...) -->
+    <p class="header-subtitle">Tracking the consumer journey from global market spikes to the local Australian checkout</p>
+
+    <!-- Author Info with the gap defined by the CSS margin-top -->
+    <div class="author-info">
+        <p><strong>Author:</strong> Alya Qistina Binti Tinta Firmannika, 29 May 2026</p>
+    </div>
+</header>
+ 
+
+    <div class="button-container">
+        <button onclick="showFact(1)">Fun Fact 1</button>
+        <button onclick="showFact(2)">Fun Fact 2</button>
+        <button onclick="showFact(3)">Fun Fact 3</button>
+    </div>
+
+    <p id="factBox"></p>
+
+    <div class="subsection-header">
+    <h2>What is Global E-Commerce?</h2>
+    <p class="subsection-intro">A look at the global e-commerce market, how it functions today, and where it is heading in the coming years.</p>
+</div>
+
+    <script src="fun_facts"></script>
+
+    
+
+<div class="dashboard-grid">
+  
+  <div class="col-half">
+    <div id="ORD_PROP_CHART" class="chart-box"></div>
+    <div class="story-box">
+      <p>As an introduction, the global online market is not just about regular shoppers. Most of it, about <b>78.4%,</b> is actually <b>businesses selling to other businesses (B2B).</b> While the shopping we do <b>as individuals (B2C) and selling to each other (C2C)</b> are important, they make up a much smaller part of the total market.</p>
+    </div>
+</div>
+  
+  <div class="col-half">
+    <div id="LINE_COLUMN_CHART" class="chart-box"></div>
+    <div class="story-box">
+      <p>After things settled down following the big changes in 2020, online spending is now growing fast again. We expect it to reach a total of <b>$82.3 billion by 2025.</b> This shows that online shopping is becoming a steady and reliable part of our everyday lives.</b>.</p>
+    </div>
+  </div>
+
+  <div class="col-full">
+    <div id="CHOROPLETH_MAP" class="chart-box"></div>
+    <div class="story-box">
+        <p>
+            This map shows which parts of the world sell the most items online. You can see that <strong>Asia-Pacific</strong> is the biggest market by far, holding over half of the global share, which is 54.3%. 
+            Other areas like <strong>North America</strong> and <strong>Europe</strong> also have strong sales, while <strong>Latin America, the Middle East, and Africa</strong> are still growing. 
+            This map helps us see where most e-commerce activity happens across the globe.
+        </p>
+    </div>
+  </div>
+</div>
+
+
+
+    <div class="subsection-header">
+        <h2>Where Does Australia Stand in E-Commerce?</h2>
+        <p class="subsection-intro">Exploring the Australian e-commerce landscape: how we shop, pay, and where the nation's digital spending is concentrated.</p>
+    </div>
+
+<div class="dashboard-grid">
+  
+  <div class="col-half">
+    <div id="LINE_CHART" class="chart-box"></div>
+    <div class="story-box">
+      <p>A few years ago, online shopping was just an 'extra' way to buy things. But <b>after 2020,</b> it became everyone's go-to habit. We aren't going back, <b>more Australian households</b> than ever are now living their lives online.</p>
+    </div>
+  </div>
+  
+  <div class="col-half">
+    <div id="RADIAL_CHART" class="chart-box"></div>
+    <div class="story-box">
+      <p>The growth isn't stopping here. Think of this chart like a digital family tree that's constantly <b>getting bigger.</b> Every year, <b>millions more accounts</b> are being opened, showing that in the future, almost everything we do from banking to shopping will happen through a screen.</p>
+    </div>
+  </div>
+
+  <div class="col-half">
+    <div id="WAFFLE_CHART" class="chart-box"></div>
+    <div class="story-box">
+      <p>So, how are we actually spending our money? It's all about <b>convenience.</b> We're moving away from old-school habits and using whatever makes the checkout fastest, whether it's <b>a card, a digital wallet, or 'Buy Now, Pay Later.'</b> If it's easy, we use it.</p>
+    </div>
+  </div>
+
+  <div class="col-half">
+    <div id="SYMBOL_PROP_CHART" class="chart-box"></div>
+    <div class="story-box">
+      <p>E-commerce spending is highly concentrated in major metropolitan hubs, with <b>New South Wales</b> leading the nation at <b>$26.4 billion.</b> This map shows that while online shopping is a national habit, the industry's financial engine remains firmly centered in our largest capital cities.</p>
+    </div>
+  </div>
+</div>
+
+
+
+    <div class="subsection-header">
+        <h2>Who Are Australian Online Shoppers?</h2>
+    </div>
+
+    <div class="gen-grid">
+  <button class="gen-card" onclick="showDetail('Gen Z')">Gen Z</button>
+  <button class="gen-card" onclick="showDetail('Millennials')">Millennials</button>
+  <button class="gen-card" onclick="showDetail('Gen X')">Gen X</button>
+  <button class="gen-card" onclick="showDetail('Baby Boomers')">Boomers</button>
+  <button class="gen-card" onclick="showDetail('Builders')">Builders</button>
+</div>
+
+<div id="gen-detail" class="detail-box">
+  <p>Click a generation to see insights</p>
+</div>
+
+ <p id="genBox"></p>
+
+    <script src="generation"></script>
+
+
+
+<div class="dashboard-grid">
+  
+  <div class="col-half">
+    <div id="DONUT_CHART" class="chart-box"></div>
+    <div class="story-box">
+      <p>Online spending isn't equal, it's a reflection of distinct generational economic priorities. While <b>Millennials and Gen X</b> dominate the digital wallet, <b>older cohorts provide a steady, reliable foundation.</b> But numbers alone don't reveal the full story. Beyond the dollar amount, how do these generations actually choose to shop? We now look at the tug-of-war between digital carts and physical shelves.</p>
+    </div>
+  </div>
+
+  <div class="col-half">
+    <div id="STACKED_BAR_CHART" class="chart-box"></div>
+    <div class="story-box">
+      <p>Data shows that we are a nation of hybrid shoppers. Even the <b>most tech-native generations</b> maintain a significant commitment to in-store shopping. This reveals that the Australian retail landscape isn't about choosing one channel over the other, it is about the seamless integration of both.</p>
+    </div>
+  </div>
+
+  <div class="col-full">
+    <div id="LOLLIPOP_CHART" class="chart-box"></div>
+    <div class="story-box">
+        <p>
+            While the big-ticket items like <strong>Online Marketplaces</strong> and <strong>Food & Liquor</strong> capture the highest volume of spend, the true catalyst for this growth lies in the generational shift we have been exploring.
+        </p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="subsection-header">
+        <h2>Why Do Australians Shop Online?</h2>
+        <p class="subsection-intro">Uncovering the key motivators that drive Australian consumers to choose digital platforms for their daily shopping needs.</p>
+    </div>
+
+<div class="dashboard-grid">
+  
+  <div class="col-half">
+    <div id="PIE_CHART" class="chart-box"></div>
+    <div class="story-box">
+      <p>The data paints a clear picture: Australia's digital marketplace is currently anchored by the sheer scale of platforms like <b>Amazon.</b> However, this reach isn't accidental, it is a direct response to the primary <b>behavioral trigger</b> of the modern Australian shopper.</p>
+    </div>
+  </div>
+
+  <div class="col-half">
+    <div id="DOT_PLOT" class="chart-box"></div>
+    <div class="story-box">
+      <p>As our preference data confirms, <b>Free Delivery</b> stands as the ultimate catalyst for digital transactions. By <b>removing the friction of shipping costs,</b> leaders like Amazon have successfully aligned their value proposition with the <b>number one demand</b> of the Australian consumer.</p>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="subsection-header">
+        <h2>How Digital Risks Affect Australian E-Commerce?</h2>
+        <p class="subsection-intro">As we embrace the ease of e-commerce, it is essential to stay aware of the digital risks that can affect Australian shoppers.</p>
+    </div>
+
+<div class="dashboard-grid">
+  
+  <div class="col-half">
+    <div id="CHOROPLETH_MAP2" class="chart-box"></div>
+    <div class="story-box">
+      <p>Our choropleth map highlights a critical trend: digital threats are <b>not distributed equally.</b> Currently, <b>Queensland</b> reports the highest rate of scams <b>per 100k people.</b> Whether through booming local digital-first adoption or rapid growth in e-commerce hubs, <b>Queenslanders</b> are currently on the frontline of these online traps.</p>
+  </div>
+  </div>
+
+  <div class="col-half">
+    <div id="BUBBLE_CHART" class="chart-box"></div>
+    <div class="story-box">
+      <p>Understanding your risk profile requires looking beyond just the number of reports. While <b>Phishing and Buying & Selling</b> scams are <b>the most frequent</b> hurdles for the everyday shopper, <b>Investment Scams</b> represent the most significant financial danger, often hiding behind the same mask of 'local opportunity' as legitimate growth.</p>
+    </div>
+  </div>
+</div>
+
+
+<footer class="main-footer">
+    <div class="subsection-header">
+        <h2>References</h2>
+    </div>
+    <ul class="references-list">
+        <li>Australia Post. (2026b). <i>Australia Post eCommerce Report 2026</i>. https://auspost.com.au/content/dam/ecommerce-report/australia-post-ecommerce-report-2026.pdf</li>
+        <li>Australian Bureau of Statistics. (2026, March 19). <i>National, state and territory population, September 2025</i>. https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/latest-release</li>
+        <li>Grand View Research. (2026, March 17). <i>E-commerce Market Size and Share | Industry Report, 2033</i>. https://www.grandviewresearch.com/industry-analysis/e-commerce-market</li>
+        <li>Law, D., & Law, D. (2025, March 19). <i>Australian eCommerce Statistics (2025)</i>. Red Search. https://www.redsearch.com.au/resources/australian-ecommerce-statistics/</li>
+        <li>PCMI, & Lehr, L. (2024). <i>The E-Commerce Data Portrait of Asia Pacific</i> (pp. 1-17). https://paymentscmi.com</li>
+        <li>Red Stag Fulfillment. (2025, June 15). <i>What share of global retail sales is ecommerce?</i> https://redstagfulfillment.com/what-share-of-global-retail-sales-is-ecommerce/</li>
+        <li>Scamwatch. (2026, April 9). <i>Scam statistics</i>. https://www.scamwatch.gov.au/research-and-resources/scam-statistics</li>
+        <li>Snyder, K. (2026, May 1). <i>35 Top E-Commerce Statistics</i>. Forbes Advisor. https://www.forbes.com/advisor/business/ecommerce-statistics/</li>
+        <li>Sperti, T. (2024, April 19). <i>State of the eCommerce market in Australia in 10 charts</i>. Arktic Fox. https://www.arkticfox.io/post/state-of-the-ecommerce-market-in-australia-in-10-charts</li>
+        <li>Statista. (2026, March 16). <i>Number of users of e-commerce in Australia 2017-2029.</i> https://www.statista.com/forecasts/1471759/australia-number-of-e-commerce-users/</li>
+    </ul>
+</footer>
+    
+
+</body>
+</html>

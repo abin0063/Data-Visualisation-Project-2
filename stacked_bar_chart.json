@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Shopping Preference by Generation (In-store vs Online)",
+    "color": "black",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "dy": -10
+  },
+  "width": 330,
+  "height": 170,
+  "data": {
+    "url": "data/in-store_vs_online.csv"
+  },
+  "transform": [
+    {
+      "fold": ["In-store", "Online"],
+      "as": ["Channel", "Value"]
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "Generation",
+      "type": "nominal",
+      "axis": { "labelAngle": 0 }
+    },
+    "x": {
+      "field": "Value",
+      "type": "quantitative",
+      "stack": "zero",
+      "title": "Percentage (%)"
+    },
+    "color": {
+      "field": "Channel",
+      "type": "nominal",
+      "scale": {
+        "range": ["#6A5ACD", "#D8BFD8"]
+      }
+    },
+    "tooltip": [
+      { "field": "Generation", "type": "nominal" },
+      { "field": "Channel", "type": "nominal" },
+      { "field": "Value", "type": "quantitative" ,"title":"Value (%)" }
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 900,
+  "height": 270,
+  "title": {
+    "text": "Online Spend by Category 2025",
+    "subtitle": "Use the dropdown to filter by category",
+    "color": "black",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "dy": -10
+  },
+  "params": [
+    {
+      "name": "categoryFilter",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "Books & stationery & multimedia", "Health & beauty", "Department stores", "Hobbies & rec. goods", "Consumer electronics", "Home & garden", "Fashion & apparel", "Food & liquor", "Online marketplaces"],
+        "name": "Select Category: "
+      }
+    }
+  ],
+  "data": {
+    "url": "data/category_spending_3.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "filter": "categoryFilter === 'All' || datum.category === categoryFilter"
+    },
+    {
+      "calculate": "'$' + datum.online_spend_billion + 'b'",
+      "as": "SpendLabel"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "category",
+      "type": "nominal",
+      "sort": "-x",
+      "axis": {"title": null, "labelFontSize": 12, "labelLimit": 300}
+    },
+    "x": {
+      "field": "online_spend_billion",
+      "type": "quantitative",
+      "scale": {"domain": [0, 20]}, 
+      "axis": {"title": "Online Spend (Billion AUD)", "grid": true}
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "rule", "color": "#D8B4FE", "strokeWidth": 2.5},
+      "encoding": {"x2": {"datum": 0}}
+    },
+    {
+      "mark": {"type": "circle", "size": 400, "color": "#4C1178", "cursor": "pointer"},
+      "encoding": {
+        "tooltip": [
+          {"field": "category", "type": "nominal", "title": "Category"},
+          {"field": "online_spend_billion", "type": "quantitative", "title": "Spend ($b)"},
+          {"field": "yoy_growth_percentage", "type": "quantitative", "title": "YoY Growth (%)"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 12, "fontWeight": "bold", "fontSize": 11},
+      "encoding": {"text": {"field": "SpendLabel", "type": "nominal"}}
+    }
+  ],
+  "config": {"view": {"stroke": null}}
+}

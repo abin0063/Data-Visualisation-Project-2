@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Growth in Australian Online Shopping Households",
+    "color": "black",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "dy": -10
+  },
+  "width": 464,
+  "height": 250,
+  "data": {
+    "url": "data/australian_online_shoppers.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3,
+        "color": "#3B0764",
+        "point": { "filled": true, "fill": "#D8B4FE", "size": 100 }
+      },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal", "title": "Year" },
+        "y": { "field": "households_m", "type": "quantitative", "title": "Households (millions)", "scale": { "zero": false } },
+        "tooltip": [
+          { "field": "year", "title": "Year" },
+          { "field": "households_m", "title": "Households (Millions)", "format": ".2f" }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontWeight": "bold",
+        "color": "#4C1178",
+        "fontSize": 12
+      },
+      "encoding": {
+        "x": { "value": 75 },
+        "y": { "value": 75 },
+        "text": { "value": "COVID-19 Impact" }
+      }
+    }
+  ]
+}

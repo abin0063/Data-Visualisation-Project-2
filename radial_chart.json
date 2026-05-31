@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Expansion of Australian Digital Accounts",
+    "color": "black",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "dy": -10
+  },
+  "width": 463,
+  "height": 278,
+  "data": {
+    "url": "data/e-commerce_total_account.csv"
+  },
+  "params": [
+    {
+      "name": "yearSelector",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029"],
+        "name": "Select Year: "
+      }
+    }
+  ],
+  "mark": {
+    "type": "arc",
+    "innerRadius": 50,
+    "stroke": "white",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "theta": {
+      "field": "User_in_millions",
+      "type": "quantitative",
+      "scale": {"domain": [0, 25]}
+    },
+    "radius": {
+      "field": "Year",
+      "type": "ordinal"
+    },
+    "color": {
+      "field": "Year",
+      "type": "nominal",
+      "scale": {
+        "range": ["#D55E00", "#009E73", "#56B4E9", "#F0E442", "#0072B2", "#E69F00", "#CC79A7"]
+      },
+      "legend": null
+    },
+    "fillOpacity": {
+      "condition": {
+        "test": "yearSelector == 'All' || datum.Year == yearSelector",
+        "value": 1
+      },
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "Year", "type": "ordinal"},
+      {"field": "User_in_millions", "type": "quantitative", "title": "Millions"}
+    ]
+  },
+  "view": {
+    "stroke": null
+  }
+}

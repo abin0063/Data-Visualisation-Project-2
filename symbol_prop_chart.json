@@ -1,0 +1,63 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 390,
+  "height": 360,
+  "title": {
+    "text": "Online Spending by Australian State",
+    "color": "black",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "dy": -10
+  },
+  "config": {
+    "background": "white",
+    "view": { "stroke": "transparent" }
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [133, -27],
+    "scale": 500
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "states.geojson",
+        "format": {"type": "json", "property": "features"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E5E5E5",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "data/state_spending.csv",
+        "format": {"type": "csv"}
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.8,
+        "stroke": "white",
+        "strokeWidth": 1,
+        "color": "#3B0764"
+      },
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "size": {
+          "field": "Spending",
+          "type": "quantitative",
+          "scale": {"range": [50, 2000]}
+        },
+        "tooltip": [
+          {"field": "State", "type": "nominal", "title": "State"},
+          {"field": "Spending", "type": "quantitative", "title": "Spending ($B)"},
+          {"field": "Insights", "type": "nominal", "title": "Key Insight"}
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Global E-Commerce Revenue Share by Region",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "dy": -10
+  },
+  "width": 970,
+  "height": 380,
+  "projection": {
+    "type": "equalEarth"
+  },
+  "params": [
+    {
+      "name": "Region_Select",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All",
+          "Asia-Pacific",
+          "North America",
+          "Europe",
+          "Latin America",
+          "Middle East & Africa"
+        ],
+        "name": "Select Region: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "ne_110m_admin_0_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f0f0f0",
+        "stroke": "white"
+      }
+    },
+    {
+      "data": {
+        "url": "ne_110m_admin_0_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.properties.NAME == 'Viet Nam' ? 'Vietnam' : datum.properties.NAME",
+          "as": "topo_country_clean"
+        },
+        {
+          "lookup": "topo_country_clean",
+          "from": {
+            "data": {
+              "url": "data/country_region_data.csv"
+            },
+            "key": "country",
+            "fields": [
+              "share",
+              "region"
+            ]
+          }
+        },
+        {
+          "filter": "Region_Select == 'All' || datum.region == Region_Select"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "color": {
+          "field": "share",
+          "type": "quantitative",
+          "title": "Revenue Share (%)",
+          "scale": {
+            "scheme": "blues",
+            "domain": [
+              0,
+              50
+            ]
+          },
+          "legend": {
+            "orient": "right",
+            "gradientLength": 200
+          }
+        },
+        "tooltip": [
+          {
+            "field": "topo_country_clean",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "region",
+            "type": "nominal",
+            "title": "Region"
+          },
+          {
+            "field": "share",
+            "type": "quantitative",
+            "title": "Revenue Share (%)"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "background": "transparent"
+  }
+}
